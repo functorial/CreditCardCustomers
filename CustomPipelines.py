@@ -13,7 +13,13 @@ class DropFeatures(TransformerMixin, BaseEstimator):
         return self
     
     def transform(self, X:pd.DataFrame, y=None):
-        return X.drop(columns=self._feature_list, inplace=False)
+        X_copy = X.copy()
+        for feature in self._feature_list:
+            try:
+                X_copy.drop(columns=[feature], inplace=True)
+            except KeyError:
+                print(f'DropFeatures warning: {feature} does not exist.')
+        return X_copy
 
 
 class CreateFeatures(TransformerMixin, BaseEstimator):
@@ -48,4 +54,9 @@ class TransformFeatures(TransformerMixin, BaseEstimator):
     def transform(self, X:pd.DataFrame, y=None):
         X_copy = X.copy()
         for feature in self._function_dict.keys():
-            X_copy[feature] = X_copy[feature].apply(self._function_dict[feature])
+            try:
+                X_copy[feature] = X_copy[feature].apply(self._function_dict[feature])
+            except KeyError:
+                print(f'TransformFeatures warning: {feature} does not exist.')
+        return X_copy
+
