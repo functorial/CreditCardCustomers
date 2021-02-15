@@ -55,11 +55,17 @@ We can summarize these scores using our own interpretation of them.
 <img src="./total_trans_ct.png" width="400" class="center"/>
 </p>
 
-3) Many features echo the evidence of 2), showing that customers who use the service less are more likely to churn. These include: the number of relationships the customer has with us, the total transaction amount, and months inactive.
+3) Many features echo the evidence of 2., showing that customers who use the service less are more likely to churn. These include: the number of relationships the customer has with us, the total transaction amount, and months inactive.
 
 This indicates that there are two different groups of churning customers: those who are not using their accounts very much and those who are unable to pay off their balance. This passes a sanity test, since the conclusions are not suprising. If someone doesn't use their card very much, it may make sense for them to cancel our service. On the other hand, if a customer cannot pay off their balance, they may want to transfer their balance to another company which offers a lower interest rate. 
 
-One feature that showed surprising importance was the percent of change in the number of purchases made from quarter 4 to quarter 1. Most customers spent less in Q1 than they did in Q4 (mean around 70%), which aligns with the usual increased spending activity around the holidays. But those who spent *significantly* less (mean around 50%) in Q1 were much more likely to churn. One can speculate why this is the case. Perhaps those customers who spent significantly less in Q1 had already found a new service prior to cancelling ours? Many people make big changes at the beginning of a new year and perhaps this is one of those changes. Unfortunately, we don't have any temporal data which gives the date for when they churned. It might be a good idea to communicate this fact with stakeholders to better understand what is happening here. 
+One feature that showed surprising importance was the percent of change in the number of purchases made from quarter 4 to quarter 1. Most customers spent less in Q1 than they did in Q4 (mean around 70%), which aligns with the usual increased spending activity around the holidays. But those who spent *significantly* less (mean around 50%) in Q1 were much more likely to churn. 
+
+<p align="center">
+<img src="./total_ct_chng_q4_q1.png" width="400" class="center"/>
+</p>
+
+One can speculate why this is the case. Perhaps those customers who spent significantly less in Q1 had already found a new service prior to cancelling ours? Many people make big changes at the beginning of a new year and perhaps this is one of those changes. Unfortunately, we don't have any temporal data which gives the date for when they churned. It might be a good idea to communicate this fact with stakeholders to better understand what is happening here. 
 
 ## Possible Improvements and Some Learned Lessons
 
