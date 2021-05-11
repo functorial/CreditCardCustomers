@@ -18,7 +18,7 @@ The XGBoost hyperparameters were tuned using sklearn's RandomizedSearchCV with t
  'xgb__colsample_bytree' : [0.3, 0.4, 0.5, 0.7]}
 ```
 
- and the best parameters we could find were:
+ and the best parameters we could find (using an F1 metric) were:
 ```python
 {'xgb__learning_rate'    : 0.2, 
  'xgb__max_depth'        : 4, 
